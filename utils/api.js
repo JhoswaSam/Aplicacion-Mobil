@@ -1,14 +1,12 @@
 import axios from "axios";
 
-
-
 export const clasificar = async (mensaje) => {
   const form = new FormData();
   form.append("mensaje", mensaje);
 
   try {
     const response = await axios.post(
-      "192.168.1.10:5000/predict",
+      "http://192.168.1.10:5000/predict",
       form,
       { headers: { "Content-Type": "multipart/form-data" } }
     );
